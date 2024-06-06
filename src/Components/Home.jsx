@@ -4,11 +4,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   return (
-    <div className="d-flex justify-content-around my-2">
-      <Link to="/create" className="btn btn-primary">Create Data</Link>
-      <Link to="/read" className="btn btn-primary">Read Data </Link>
-      <Link to="/delete" className='btn btn-primary'>Delete Data</Link>
-      <Link to="/update" className='btn btn-primary'>Update Data</Link>
+    <div className="container mt-4">
+      <div className="row">
+        <div className="col-12 col-md-3 mb-2">
+          <Link to="/create" className="btn btn-primary w-100">Create Data</Link>
+        </div>
+        <div className="col-12 col-md-3 mb-2">
+          <Link to="/read" className="btn btn-primary w-100">Read Data</Link>
+        </div>
+        <div className="col-12 col-md-3 mb-2">
+          <Link to="/delete" className="btn btn-primary w-100">Delete Data</Link>
+        </div>
+        <div className="col-12 col-md-3 mb-2">
+          <Link to="/update" className="btn btn-primary w-100">Update Data</Link>
+        </div>
+      </div>
     </div>
   );
 }

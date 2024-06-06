@@ -37,9 +37,7 @@ function Update() {
     axios
       .put(`${url}/${updateData.id}`, updateData)
       .then(() => {
-       
         getdata();
-       
         setUpdateData({});
       })
       .catch((error) => {
@@ -62,53 +60,55 @@ function Update() {
       </h1>
       <Row>
         <Col md={12}>
-          <Table striped bordered hover responsive className="text-center">
-            <thead className="thead-dark">
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Email</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mydata.map((item) => {
-                const { id, e_name, e_age, e_email } = item;
-                return (
-                  <tr key={id}>
-                    <td>{id}</td>
-                    <td>{e_name}</td>
-                    <td>{e_age}</td>
-                    <td>{e_email}</td>
-                    <td>
-                      <span
-                        style={{
-                          fontSize: "24px",
-                          color: "red",
-                          cursor: "pointer",
-                          marginRight: "10px",
-                        }}
-                        onClick={() => handleDelete(id)}
-                      >
-                        <MdDelete />
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "20px",
-                          color: "blue",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => handleUpdate(id)}
-                      >
-                        <GrDocumentUpdate />
-                      </span>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
+          <div className="table-responsive">
+            <Table striped bordered hover className="text-center">
+              <thead className="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mydata.map((item) => {
+                  const { id, e_name, e_age, e_email } = item;
+                  return (
+                    <tr key={id}>
+                      <td>{id}</td>
+                      <td>{e_name}</td>
+                      <td>{e_age}</td>
+                      <td>{e_email}</td>
+                      <td>
+                        <span
+                          style={{
+                            fontSize: "24px",
+                            color: "red",
+                            cursor: "pointer",
+                            marginRight: "10px",
+                          }}
+                          onClick={() => handleDelete(id)}
+                        >
+                          <MdDelete />
+                        </span>
+                        <span
+                          style={{
+                            fontSize: "20px",
+                            color: "blue",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => handleUpdate(id)}
+                        >
+                          <GrDocumentUpdate />
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </Table>
+          </div>
         </Col>
       </Row>
      
